@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet"> <!-- Adicionando Fonte - "Poppins" -->
+    <link rel="stylesheet" href="/static/css/style.css"/> <!-- Linkando o caminho do arquivo CSS -->
+    <title>Calculadora de Carbono</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="/static/img/logotipo_aps2.svg" alt="Logotipo"/>
+
+        <div id="opcoes">
+            <a href="#"><label id="home">Home</label></a>
+            <a href="#"><label id="sobre">Sobre</label></a>
+            <button>Contato</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Criando seções -->
+        <!-- Primeira seção -->
+        <section class="secao" id="secao1">
+            <div id="text_home">
+                <h1>CALCULADORA<br>DE <span>CARBONO</span></h1>
+                <h2>Uma ferramenta para Neutralidade Climática</h2>
+                <h3>A Calculadora de Carbono emerge como uma solução 
+                    inovadora na luta contra as mudanças climáticas, 
+                    permitindo que tanto indivíduos quanto organizações 
+                    avaliem seu impacto ambiental de maneira objetiva. 
+                    Com a crescente urgência em mitigar os efeitos das 
+                    emissões de gases de efeito estufa, essa ferramenta 
+                    oferece um método prático para mensurar e compreender 
+                    como nossas atividades diárias, como o transporte, o 
+                    consumo de energia e a gestão de resíduos, contribuem 
+                    para a pegada de carbono.</h3>
+                    <button>Saiba Mais</button>
+            </div>
+            <div id="imagem_home"></div>
+        </section>
+
+        <!-- Segunda seção -->
+        <section class="secao" id="secao2">
+            <div id="topo_secao2"></div>
+            <h1 class="titulo1">Importância da Calculadora de <span>Carbono</span></h1>
+            <br>
+            <center><h2 style="margin-right: 40px; margin-left: 30px; padding-left: 20px; padding-right: 20px; text-align: justify;">ㅤㅤA Calculadora de Carbono é uma ferramenta essencial para 
+                entender o impacto ambiental de atividades cotidianas e processos como transporte, consumo de eletricidade, desmatamento e descarte de resíduos sólidos. 
+                Ao calcular as emissões de CO₂, ela permite que indivíduos e empresas saibam quanto carbono estão emitindo e, assim, possam adotar práticas mais sustentáveis. 
+                Além disso, a calculadora oferece informações para planejar ações de compensação, como a compra de créditos de carbono, que ajudam a neutralizar as emissões e 
+                financiam projetos de reflorestamento e outras iniciativas sustentáveis.
+                <br>
+                ㅤㅤUma das principais funcionalidades da ferramenta é mostrar ao usuário a quantidade de árvores que serão plantadas com base nas emissões calculadas. Isso gera uma 
+                conexão direta entre o impacto de suas atividades e as soluções para compensá-las. Com essas ações, empresas e cidadãos podem contribuir de forma significativa para 
+                a mitigação das mudanças climáticas, promovendo um futuro mais sustentável e ajudando a proteger o meio ambiente para as próximas gerações.</h2></center> 
+        </section>
+
+        <!-- Terceira seção -->
+        <section class="secao" id="secao3">
+            <h1 class="titulo">Calculadora de <span>Carbono</span></h1>
+            <h2 class="subtitulo">Calcule suas emissões mensais e anuais de CO2 através de atividades cotidianas e descubra como compensá-las com créditos de carbono.</h2>
+
+            <form action="/calcular" method="post" onsubmit="return validarFormulario();">
+                <!-- CARD 1-->
+                <div class="card">
+                    <h1 id="foms_titulo">Geral</h1>
+                    <div class="form-group">
+                        <h2>Qual o seu nome?</h2>
+                        <input type="text" id="nomeUser" placeholder="Nome Completo" maxlength="50"/> 
+                    </div>
+                    <div class="form-group">
+                        <h2>Em qual Estado do Brasil você mora?</h2>
+                        <select class="form-select" name="estado" id="selectRegiao">
+                            <option selected>Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select> 
+                    </div>
+                    <div class="form-group">
+                        <h2>Quantas pessoas moram em sua residência?</h2>   
+                        <input type="number" id="pessoasResid" placeholder="Qtd Pessoas" min="1" maxlength="2"/>
+                    </div>
+                </div>
+
+                <!-- CARD 2-->
+                <div class="card">
+                    <h1 id="foms_titulo">Eletricidade</h1>
+                    <div class="form-group">
+                        <h2>Consumo de Eletricidade (kWh):</h2>
+                        <input type="number" step="0.01" class="form-control" id="consumo_kwh" name="consumo_kwh" placeholder="kWh" maxlength="5">
+                    </div>
+                    <center><h3>OU</h3></center> 
+                    <div class="form-group">
+                        <h2>Valor da Conta de Eletricidade (R$):</h2>
+                        <input type="number" step="0.01" class="form-control" id="valor_reais" name="valor_reais" placeholder="R$" maxlength="7">
+                    </div>
+                </div>
+
+                <!-- CARD 3-->
+                <div class="card">
+                    <h1 id="foms_titulo">Gás</h1>
+                    <div class="form-group">
+                        <h2>Consumo de Botijão de Gás:</h2>
+                        <input type="number" step="1" class="form-control" id="consumo_botijao" name="consumo_botijao" placeholder="Qtd Botijões" maxlength="2">
+                    </div>
+                    <center><h3>OU</h3></center> 
+                    <div class="form-group">
+                        <h2>Consumo de Gás Encanado (m³):</h2>
+                        <input type="number" step="0.01" class="form-control" id="consumo_gas_encanado" name="consumo_gas_encanado" placeholder="m³" maxlength="5">
+                    </div>
+                </div>
+
+                <!-- CARD 4-->
+                <div class="card">
+                    <h1 id="foms_titulo">Transportes</h1>
+                    <h2 id="transporteLbl">Uso de transportes <span>particulares</span> (automóvel, motocicleta, entre outros).</h2>
+                    <div class="form-group">
+                        <h2>Tipo de Combustível:</h2>
+                        <select class="form-select" id="tipo_combustivel" name="tipo_combustivel">
+                            <option value="gasolina">Gasolina</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="cng">Gás Natural Comprimido (CNG)</option>
+                            <option value="etanol">Etanol</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h2>Consumo de Combustível (litros):</h2>
+                        <input type="number" step="0.01" class="form-control" id="consumo_combustivel" name="consumo_combustivel" placeholder="Litros/Kg" maxlength="5">
+                    </div>
+                    <center><h3>OU</h3></center> 
+                    <div class="form-group">
+                        <h2>Valor do Combustível (R$):</h2>
+                        <input type="number" step="0.01" class="form-control" id="valor_combustivel" name="valor_combustivel" placeholder="R$" maxlength="7">
+                    </div>
+                    <br>
+                    <h2 id="transporteLbl">Uso de transportes <span>aéreos</span> (avião).</h2>
+                    <div class="form-group">
+                        <h2>Viagens Aéreas Nacionais:</h2>
+                        <input type="number" step="1" class="form-control" id="viagens_nacionais" name="viagens_nacionais" placeholder="Qtd Viagens" maxlength="2">
+                    </div>
+                    <div class="form-group">
+                        <h2>Viagens Aéreas Internacionais:</h2>
+                        <input type="number" step="1" class="form-control" id="viagens_internacionais" name="viagens_internacionais" placeholder="Qtd Viagens" maxlength="2">
+                    </div>
+                </div>
+
+                <!-- CARD 5-->
+                <div class="card">
+                    <h1 id="foms_titulo">Resíduos</h1>
+                    <div class="form-group">
+                        <h2>Resíduos Gerados (kg):</h2>
+                        <input type="number" step="0.01" class="form-control" id="residuos_gerados" name="residuos_gerados" placeholder="Kg" maxlength="5">
+                    </div>
+                </div>
+
+                <!-- CARD 6-->
+                <div class="card">
+                    <h1 id="foms_titulo">Carne Bovina</h1>
+                    <div class="form-group">
+                        <h2>Consumo de Carne (kg):</h2>
+                        <input type="number" step="0.01" class="form-control" id="consumo_carne" name="consumo_carne" placeholder="Kg" maxlength="5">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn calcular-btn" onclick="calcularEmissoes()">Calcular Emissões</button>
+            </form>
+        </section>
+
+        <section class="secao" id="secao8">
+            <h1 class="titulo">Emissões Totais de <span>Carbono</span></h1>
+            <h2 class="subtitulo">Esses são os resultados de suas emissões totais expressas em uma média mensal e anual.</h2>
+                <center><div id="card1">
+                <!-- Conteúdo Tabela - Resultado Total de Emissões -->
+                    <table id="tabelaEmissao">
+                        <tead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Tipo de Dado</th>
+                                <th>Fator de Emissão</th>
+                                <th>Emissão Média Mensal</th>
+                                <th>Emissão Média Anual</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Eletricidade</td>
+                                <td>Kwh</td>
+                                <td>{{ fator_emissao_eletricidade }}Kg de CO2 por KWH</td>
+                                <td>{{ pegada_carbono_eletricidade }}Kg de CO2</td>
+                                <td>{{ media_anual_eletricidade }}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td>Gás</td>
+                                <td>Nº de Botijões ou m³</td>
+                                <td>{{ fator_emissao_botijao }}Kg de CO2 por botijão ou {{ fator_emissao_gas_encanado }}</td>
+                                <td>{{ pegada_carbono_gas }}Kg de CO2</td>
+                                <td>{{ media_anual_gas }}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td>Transportes Particulares</td>
+                                <td>Litros ou Kg</td>
+                                <td>{{ fator_emissao_particular[tipo_combustivel] if tipo_combustivel in fator_emissao_particular else 'N/A' }} Kg de CO2 por Litro</td>
+                                <td>{{ pegada_carbono_particular }}Kg de CO2</td>
+                                <td>{{ media_anual_particular}}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td>Transportes Aéreos</td>
+                                <td>Nº de Viagens</td>
+                                <td>Nacionais {{ fator_emissao_nacional }} e Internacionais {{fator_emissao_internacional}}Kg de CO2 por viagem</td>
+                                <td>{{ pegada_carbono_aereo }}Kg de CO2</td>
+                                <td>{{ pegada_carbono_aereo }}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td>Resíduos</td>
+                                <td>Kg</td>
+                                <td>{{ fator_emissao_residuos }}Kg de CO2 por Kg</td>
+                                <td>{{ pegada_carbono_residuos }}Kg de CO2</td>
+                                <td>{{ media_anual_residuos }}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td>Carne Bovina</td>
+                                <td>Kg</td>
+                                <td>{{ fator_emissao_carne }}Kg de CO2 por Kg</td>
+                                <td>{{ pegada_carbono_carne }}Kg de CO2</td>
+                                <td>{{ media_anual_carne }}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td id="txtTotal">Total de Emissões:</td>
+                                <td>tCO2e</td>
+                                <td>N/A</td>
+                                <td>{{ total_pegada_carbono }} tCO2e</td>
+                                <td>{{ total_media }} tCO2e</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div></center>
+                <div class="container">
+                    <h2 class="subtitulo2">* para compensar suas emissões totais de {{ total_pegada_carbono }} tCO2e é necessário plantar N/A {{ total_arvores }} árvores</h2>
+                    <button type="button" class="btn compensar-btn" >Compensar R${{ total_valor_arvores }}</button>
+                </div>
+        </section>
+
+
+        <!-- Botão de voltar para o topo da página -->
+        <button onclick="scrollToTop()" id="voltarTop"><img src="/static/img/img_seta_btn.png"/></button>
+    </main>
+
+    <!-- Quinta Seção -->
+    <section id="secao5">
+        <footer class="rodape" id="contato">
+            <div class="rodape-div">
+                <div class="rodape-div-1">
+                    <div class="rodape-div-1-coluna">
+                        <span><b><img src="/static/img/logotipo_aps2.png"></b></span>
+                        <p>Av. Marquês de São Vicente, 3001 - Água Branca, São Paulo - SP, 05037-040</p>
+                    </div>
+                </div>
+                <div class="rodape-div-2">
+                    <div class="rodape-div-2-coluna">
+                        <span><b>Contatos</b></span>
+                        <p>greenemission@gmail.com</p>
+                        <p>+55 11 9990-0000</p>
+                    </div>
+                </div>
+                <div class="rodape-div-3">
+                    <div class="rodape-div-3-coluna">
+                        <span><b>Links</b></span>
+                        <p><a href="#Home">Home</a></p>
+                        <p><a href="#Sobre">Sobre</a></p>
+                        <p><a href="#Contato">Contato</a></p>
+                    </div>
+                </div>
+                <div class="rodape-div-4">
+                    <div class="rodape-div-4-coluna">
+                        <span><b>Outros</b></span>
+                        <p>Políticas de Privacidade</p>
+                    </div>
+                </div>
+            </div>
+            <p class="rodape-direitos">Copyright © 2024 – Todos os Direitos Reservados.</p>
+        </footer>
+    </section>
+
+    <script src="/static/js/script.js"></script> <!-- Linkando o caminho do arquivo JS-->
+</body>
+</html>
