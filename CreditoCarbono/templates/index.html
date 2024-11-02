@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <img id="logo" src="/static/img/logotipo_aps2.svg" alt="Logotipo"/>
+        <img id="logo" src="/static/img/logotipo_aps2.svg" alt="Logotipo"/> <!-- Inserindo Logotipo no menu da página-->
 
         <div id="opcoes">
             <a href="#"><label id="home">Home</label></a>
@@ -61,87 +61,88 @@
             <h1 class="titulo">Calculadora de <span>Carbono</span></h1>
             <h2 class="subtitulo">Calcule suas emissões mensais e anuais de CO2 através de atividades cotidianas e descubra como compensá-las com créditos de carbono.</h2>
 
-            <form action="/calcular" method="post" onsubmit="return validarFormulario();">
-                <!-- CARD 1-->
+            <!-- Criando Formulário de Cálculo -->
+            <form action="/calcular" method="post" onsubmit="return validarFormulario();" id="formsCalculo">
+                <!-- Form-Group - CARD 1-->
                 <div class="card">
                     <h1 id="foms_titulo">Geral</h1>
                     <div class="form-group">
-                        <h2>Qual o seu nome?</h2>
-                        <input type="text" id="nomeUser" placeholder="Nome Completo" maxlength="50"/> 
-                    </div>
+                        <!--  <h2>Qual o seu nome?</h2>
+                        <input type="text" id="nomeUser" placeholder="Nome Completo" maxlength="50"/> -->
+                    </div> 
                     <div class="form-group">
-                        <h2>Em qual Estado do Brasil você mora?</h2>
+                        <label>Em qual Estado do Brasil você mora?</label><br>
                         <select class="form-select" name="estado" id="selectRegiao">
                             <option selected>Selecione</option>
-                            <option value="AC">Acre</option>
+                            <option value="Acre">Acre</option>
                             <option value="AL">Alagoas</option>
-                            <option value="AP">Amapá</option>
-                            <option value="AM">Amazonas</option>
-                            <option value="BA">Bahia</option>
-                            <option value="CE">Ceará</option>
-                            <option value="DF">Distrito Federal</option>
-                            <option value="ES">Espírito Santo</option>
-                            <option value="GO">Goiás</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="MT">Mato Grosso</option>
+                            <option value="Alagoas">Amapá</option>
+                            <option value="Amazonas">Amazonas</option>
+                            <option value="Bahia">Bahia</option>
+                            <option value="Ceará">Ceará</option>
+                            <option value="Distrito Federal">Distrito Federal</option>
+                            <option value="Espírito Santo">Espírito Santo</option>
+                            <option value="Goiás">Goiás</option>
+                            <option value="Maranhão">Maranhão</option>
+                            <option value="Mato Grosso">Mato Grosso</option>
                             <option value="MS">Mato Grosso do Sul</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="PA">Pará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PR">Paraná</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="PI">Piauí</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="RN">Rio Grande do Norte</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>
-                            <option value="RR">Roraima</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>
+                            <option value="Mato Grosso do Sul">Minas Gerais</option>
+                            <option value="Pará">Pará</option>
+                            <option value="Paraíba">Paraíba</option>
+                            <option value="Paraná">Paraná</option>
+                            <option value="PE">Paraná</option>
+                            <option value="Piauí">Piauí</option>
+                            <option value="Rio de Janeiro">Rio de Janeiro</option>
+                            <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                            <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                            <option value="Rondônia">Rondônia</option>
+                            <option value="Roraima">Roraima</option>
+                            <option value="Santa Catarina">Santa Catarina</option>
+                            <option value="São Paulo">São Paulo</option>
+                            <option value="Sergipe">Sergipe</option>
+                            <option value="Tocantins">Tocantins</option>
                         </select> 
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <h2>Quantas pessoas moram em sua residência?</h2>   
                         <input type="number" id="pessoasResid" placeholder="Qtd Pessoas" min="1" maxlength="2"/>
-                    </div>
-                </div>
+                    </div> -->
+                </div> 
 
-                <!-- CARD 2-->
+                <!-- Form-Group - CARD 2-->
                 <div class="card">
                     <h1 id="foms_titulo">Eletricidade</h1>
                     <div class="form-group">
-                        <h2>Consumo de Eletricidade (kWh):</h2>
+                        <label>Consumo de Eletricidade (kWh):</label><br>
                         <input type="number" step="0.01" class="form-control" id="consumo_kwh" name="consumo_kwh" placeholder="kWh" maxlength="5">
                     </div>
                     <center><h3>OU</h3></center> 
                     <div class="form-group">
-                        <h2>Valor da Conta de Eletricidade (R$):</h2>
+                        <label>Valor da Conta de Eletricidade (R$):</label><br>
                         <input type="number" step="0.01" class="form-control" id="valor_reais" name="valor_reais" placeholder="R$" maxlength="7">
                     </div>
                 </div>
 
-                <!-- CARD 3-->
+                <!-- Form-Group - CARD 3-->
                 <div class="card">
                     <h1 id="foms_titulo">Gás</h1>
                     <div class="form-group">
-                        <h2>Consumo de Botijão de Gás:</h2>
+                        <label>Consumo de Botijão de Gás:</label><br>
                         <input type="number" step="1" class="form-control" id="consumo_botijao" name="consumo_botijao" placeholder="Qtd Botijões" maxlength="2">
                     </div>
                     <center><h3>OU</h3></center> 
                     <div class="form-group">
-                        <h2>Consumo de Gás Encanado (m³):</h2>
+                        <label>Consumo de Gás Encanado (m³):</label><br>
                         <input type="number" step="0.01" class="form-control" id="consumo_gas_encanado" name="consumo_gas_encanado" placeholder="m³" maxlength="5">
                     </div>
                 </div>
 
-                <!-- CARD 4-->
+                <!-- Form-Group - CARD 4-->
                 <div class="card">
                     <h1 id="foms_titulo">Transportes</h1>
                     <h2 id="transporteLbl">Uso de transportes <span>particulares</span> (automóvel, motocicleta, entre outros).</h2>
                     <div class="form-group">
-                        <h2>Tipo de Combustível:</h2>
+                        <label>Tipo de Combustível:</label><br>
                         <select class="form-select" id="tipo_combustivel" name="tipo_combustivel">
                             <option value="gasolina">Gasolina</option>
                             <option value="diesel">Diesel</option>
@@ -150,52 +151,54 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <h2>Consumo de Combustível (litros):</h2>
+                        <label>Consumo de Combustível (litros):</label><br>
                         <input type="number" step="0.01" class="form-control" id="consumo_combustivel" name="consumo_combustivel" placeholder="Litros/Kg" maxlength="5">
                     </div>
                     <center><h3>OU</h3></center> 
                     <div class="form-group">
-                        <h2>Valor do Combustível (R$):</h2>
+                        <label>Valor do Combustível (R$):</label><br>
                         <input type="number" step="0.01" class="form-control" id="valor_combustivel" name="valor_combustivel" placeholder="R$" maxlength="7">
                     </div>
                     <br>
                     <h2 id="transporteLbl">Uso de transportes <span>aéreos</span> (avião).</h2>
                     <div class="form-group">
-                        <h2>Viagens Aéreas Nacionais:</h2>
+                        <label>Viagens Aéreas Nacionais:</label><br>
                         <input type="number" step="1" class="form-control" id="viagens_nacionais" name="viagens_nacionais" placeholder="Qtd Viagens" maxlength="2">
                     </div>
                     <div class="form-group">
-                        <h2>Viagens Aéreas Internacionais:</h2>
+                        <label>Viagens Aéreas Internacionais:</label><br>
                         <input type="number" step="1" class="form-control" id="viagens_internacionais" name="viagens_internacionais" placeholder="Qtd Viagens" maxlength="2">
                     </div>
                 </div>
 
-                <!-- CARD 5-->
+                <!-- Form-Group - CARD 5-->
                 <div class="card">
                     <h1 id="foms_titulo">Resíduos</h1>
                     <div class="form-group">
-                        <h2>Resíduos Gerados (kg):</h2>
+                        <label>Resíduos Gerados (kg):</label><br>
                         <input type="number" step="0.01" class="form-control" id="residuos_gerados" name="residuos_gerados" placeholder="Kg" maxlength="5">
                     </div>
                 </div>
 
-                <!-- CARD 6-->
+                <!-- Form-Group - CARD 6-->
                 <div class="card">
                     <h1 id="foms_titulo">Carne Bovina</h1>
                     <div class="form-group">
-                        <h2>Consumo de Carne (kg):</h2>
+                        <label>Consumo de Carne (kg):</label><br>
                         <input type="number" step="0.01" class="form-control" id="consumo_carne" name="consumo_carne" placeholder="Kg" maxlength="5">
                     </div>
                 </div>
 
-                <button type="submit" class="btn calcular-btn" onclick="calcularEmissoes()">Calcular Emissões</button>
+                <button type="submit" class="btn calcular-btn">Calcular Emissões</button>
             </form>
         </section>
 
-        <section class="secao" id="secao8">
+        <!-- Quarta seção -->
+        {% if mostrar_secao4 %}
+        <section class="secao" id="secao4" style="display: flex;">
             <h1 class="titulo">Emissões Totais de <span>Carbono</span></h1>
             <h2 class="subtitulo">Esses são os resultados de suas emissões totais expressas em uma média mensal e anual.</h2>
-                <center><div id="card1">
+                <div id="card1">
                 <!-- Conteúdo Tabela - Resultado Total de Emissões -->
                     <table id="tabelaEmissao">
                         <tead>
@@ -225,7 +228,7 @@
                             <tr>
                                 <td>Transportes Particulares</td>
                                 <td>Litros ou Kg</td>
-                                <td>{{ fator_emissao_particular[tipo_combustivel] if tipo_combustivel in fator_emissao_particular else 'N/A' }} Kg de CO2 por Litro</td>
+                                <td>{{ fator_emissao }} Kg de CO2 por Litro</td>
                                 <td>{{ pegada_carbono_particular }}Kg de CO2</td>
                                 <td>{{ media_anual_particular}}Kg de CO2</td>
                             </tr>
@@ -254,18 +257,92 @@
                                 <td id="txtTotal">Total de Emissões:</td>
                                 <td>tCO2e</td>
                                 <td>N/A</td>
-                                <td>{{ total_pegada_carbono }} tCO2e</td>
-                                <td>{{ total_media }} tCO2e</td>
+                                <td>{{ total_emissoes }} tCO2e</td>
+                                <td>{{ total_emissoes_media }} tCO2e</td>
                             </tr>
                         </tbody>
                     </table>
-                </div></center>
+                </div>
                 <div class="container">
                     <h2 class="subtitulo2">* para compensar suas emissões totais de {{ total_pegada_carbono }} tCO2e é necessário plantar N/A {{ total_arvores }} árvores</h2>
                     <button type="button" class="btn compensar-btn" >Compensar R${{ total_valor_arvores }}</button>
                 </div>
         </section>
-
+        {% else %}
+        <section class="secao" id="secao4" style="display: none;">
+            <h1 class="titulo">Emissões Totais de <span>Carbono</span></h1>
+            <h2 class="subtitulo">Esses são os resultados de suas emissões totais expressas em uma média mensal e anual.</h2>
+                <div id="card1">
+                <!-- Conteúdo Tabela - Resultado Total de Emissões -->
+                    <table id="tabelaEmissao">
+                        <tead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Tipo de Dado</th>
+                                <th>Fator de Emissão</th>
+                                <th>Emissão Média Mensal</th>
+                                <th>Emissão Média Anual</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Eletricidade</td>
+                                <td>Kwh</td>
+                                <td>{{ fator_emissao_eletricidade }}Kg de CO2 por KWH</td>
+                                <td>{{ pegada_carbono_eletricidade }}Kg de CO2</td>
+                                <td>{{ media_anual_eletricidade }}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td>Gás</td>
+                                <td>Nº de Botijões ou m³</td>
+                                <td>{{ fator_emissao_botijao }}Kg de CO2 por botijão ou {{ fator_emissao_gas_encanado }}</td>
+                                <td>{{ pegada_carbono_gas }}Kg de CO2</td>
+                                <td>{{ media_anual_gas }}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td>Transportes Particulares</td>
+                                <td>Litros ou Kg</td>
+                                <td>{{ fator_emissao }} Kg de CO2 por Litro</td>
+                                <td>{{ pegada_carbono_particular }}Kg de CO2</td>
+                                <td>{{ media_anual_particular}}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td>Transportes Aéreos</td>
+                                <td>Nº de Viagens</td>
+                                <td>Nacionais {{ fator_emissao_nacional }} e Internacionais {{fator_emissao_internacional}}Kg de CO2 por viagem</td>
+                                <td>{{ pegada_carbono_aereo }}Kg de CO2</td>
+                                <td>{{ pegada_carbono_aereo }}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td>Resíduos</td>
+                                <td>Kg</td>
+                                <td>{{ fator_emissao_residuos }}Kg de CO2 por Kg</td>
+                                <td>{{ pegada_carbono_residuos }}Kg de CO2</td>
+                                <td>{{ media_anual_residuos }}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td>Carne Bovina</td>
+                                <td>Kg</td>
+                                <td>{{ fator_emissao_carne }}Kg de CO2 por Kg</td>
+                                <td>{{ pegada_carbono_carne }}Kg de CO2</td>
+                                <td>{{ media_anual_carne }}Kg de CO2</td>
+                            </tr>
+                            <tr>
+                                <td id="txtTotal">Total de Emissões:</td>
+                                <td>tCO2e</td>
+                                <td>N/A</td>
+                                <td>{{ total_emissoes }} tCO2e</td>
+                                <td>{{ total_emissoes_media }} tCO2e</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container">
+                    <h2 class="subtitulo2">* para compensar suas emissões totais de {{ total_pegada_carbono }} tCO2e é necessário plantar N/A {{ total_arvores }} árvores</h2>
+                    <button type="button" class="btn compensar-btn" >Compensar R${{ total_valor_arvores }}</button>
+                </div>
+        </section>
+        {% endif %}
 
         <!-- Botão de voltar para o topo da página -->
         <button onclick="scrollToTop()" id="voltarTop"><img src="/static/img/img_seta_btn.png"/></button>
@@ -273,7 +350,7 @@
 
     <!-- Quinta Seção -->
     <section id="secao5">
-        <footer class="rodape" id="contato">
+        <footer class="rodape" id="contato"> <!-- Criando rodapé da página -->
             <div class="rodape-div">
                 <div class="rodape-div-1">
                     <div class="rodape-div-1-coluna">
