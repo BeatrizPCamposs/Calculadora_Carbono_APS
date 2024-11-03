@@ -9,6 +9,9 @@ def index():
 @app.route('/calcular', methods=['POST'])  # Define a rota para o cálculo
 def calcular():
     try:
+        nome = request.form.get('nome') # Obtem o primeiro nome do usuário
+        if not nome:
+            raise ValueError("O nome é obrigatório.")
 
     #ELETRICIDADE -------------------------------------------------------------------------------------------------------------------------
         # Defini as Regiões de acordo com o dado de entrada do Estado
@@ -190,6 +193,7 @@ def calcular():
         # Renderiza o template com o valor obtido em cada variável
         return render_template(
             'index.html',
+            nome=nome,
             pegada_carbono_eletricidade=pegada_carbono_eletricidade,
             media_anual_eletricidade=media_anual_eletricidade,
             fator_emissao_eletricidade=fator_emissao_eletricidade,
@@ -200,6 +204,8 @@ def calcular():
             fator_emissao_gas_encanado=fator_emissao_gas_encanado,
 
             media_anual_particular=media_anual_particular,
+            fator_emissao_nacional=fator_emissao_nacional,
+            fator_emissao_internacional=fator_emissao_internacional,
             pegada_carbono_particular=pegada_carbono_particular,
             fator_emissao=fator_emissao,
 
@@ -217,7 +223,7 @@ def calcular():
             mostrar_secao4=True
         )
     except ValueError as e:
-        return str(e)  
+        return render_template('index.html', erro=str(e)) # Retornando mensagens de erro para o HTML 
 
 if __name__ == '__main__':
     app.run(debug=True) 

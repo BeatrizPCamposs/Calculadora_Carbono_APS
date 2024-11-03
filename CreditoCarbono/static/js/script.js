@@ -1,5 +1,7 @@
-function calcularEmissoes() {
-    
-    // Exibir a seção 8
-    document.getElementById("seca48").style.display = "flex";
+/* A função escolhaCampo permite que apenas um dos campos sejam preenchidos */
+function escolhaCampo(outroCampoId, campoAtual) {
+    const outroCampo = document.getElementById(outroCampoId);
+    if (campoAtual.value.trim() !== "") {
+        outroCampo.value = ""; 
+    }
 }
