@@ -253,7 +253,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     background-color: white;
-    height: 65vh;
+    height: 95vh;
 }
 #topo_secao2 {
     position: relative;
@@ -284,6 +284,61 @@ h3 {
     margin-top: -80px;
     z-index: 2;
 }
+
+#secao2 .flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#secao2 .especialidades-box {
+    color: #4cae47;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: calc(30% - 60px);
+    box-sizing: border-box;
+    border: 0.8px solid #e4e4e4;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#secao2 .especialidades-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #3980353b; 
+    border: 1px solid #4cae47;
+    background-color: white; 
+}
+
+#secao2 .especialidades-box i {
+    font-size: 55px;
+    color: #4CAE47;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#secao2 .especialidades-box:hover i{
+    transform: scale(1.1); 
+    color: #398035;
+}
+
+#secao2 .especialidades-box:hover h3{
+    color: #398035;
+}
+
+#secao2 .especialidades-box h3 {
+    color: #4cae47;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+#secao2 .especialidades-box p {
+    color: #000000;
+    font-weight: 400;
+    text-align: justify;
+}
+
 
 @media (max-width: 800px) { /* Responsividade - Seção 2*/
     .titulo1 {
