@@ -140,7 +140,7 @@ def calcular():
         # Obtém a quantidade de resíduos gerados
         consumo_residuos = request.form.get('residuos_gerados')
 
-        # Fatores de emissão para resíduos 
+        # Fatores de emissão para resíduos -
         fator_emissao_residuos = 1.2  # kg CO2 por kg de resíduos
 
         pegada_carbono_residuos = 0 
@@ -176,6 +176,18 @@ def calcular():
 
         total_emissoes_media = total_emissoes * 12
 
+    #CRÉDITO DE CARBONO -------------------------------------------------------------------------------------------------------------------------
+        credito_carbono = total_emissoes
+
+    #ÁRVORES PLANTADAS -------------------------------------------------------------------------------------------------------------------------
+        sequestro_arvore = 0.0059  # tCO2e/árvore
+        arvores_plantadas = total_emissoes / sequestro_arvore
+
+    #VALOR A SER PAGO -------------------------------------------------------------------------------------------------------------------------
+        valor_credito = 63.50  # R$ 63,50 por crédito de carbono
+
+        valor_total = credito_carbono * valor_credito # Total a ser pago em R$
+
         # Arredondando a saída dos valores
         pegada_carbono_eletricidade = round(pegada_carbono_eletricidade, 2)
         media_anual_eletricidade = round(media_anual_eletricidade, 2)
@@ -188,6 +200,9 @@ def calcular():
         media_anual_carne = round(media_anual_carne, 2)
         pegada_carbono_carne = round(pegada_carbono_carne, 2)
         total_emissoes = round(total_emissoes, 2)
+        credito_carbono = round(credito_carbono, 0)
+        arvores_plantadas = round(arvores_plantadas, 0)
+        valor_total = round(valor_total, 2)
         total_emissoes_media = round(total_emissoes_media, 2)
 
         # Renderiza o template com o valor obtido em cada variável
@@ -219,6 +234,10 @@ def calcular():
 
             total_emissoes=total_emissoes,
             total_emissoes_media=total_emissoes_media,
+
+            credito_carbono=int(credito_carbono),
+            arvores_plantadas=int(arvores_plantadas),
+            valor_total=valor_total,
 
             mostrar_secao4=True
         )

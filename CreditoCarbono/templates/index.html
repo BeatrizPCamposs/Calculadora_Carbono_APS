@@ -48,13 +48,13 @@
             <br>
             <center><h2 style="margin-right: 40px; margin-left: 30px; padding-left: 20px; padding-right: 20px; text-align: justify;">ㅤㅤA Calculadora de Carbono é uma ferramenta essencial para 
                 entender o impacto ambiental de atividades cotidianas e processos como transporte, consumo de eletricidade, desmatamento e descarte de resíduos sólidos. 
-                Ao calcular as emissões de CO₂, ela permite que indivíduos e empresas saibam quanto carbono estão emitindo e, assim, possam adotar práticas mais sustentáveis. 
+                Ao calcular as emissões de CO2, ela permite que indivíduos e empresas saibam quanto carbono estão emitindo e, assim, possam adotar práticas mais sustentáveis. 
                 Além disso, a calculadora oferece informações para planejar ações de compensação, como a compra de créditos de carbono, que ajudam a neutralizar as emissões e 
                 financiam projetos de reflorestamento e outras iniciativas sustentáveis.
                 <br>
                 ㅤㅤUma das principais funcionalidades da ferramenta é mostrar ao usuário a quantidade de árvores que serão plantadas com base nas emissões calculadas. Isso gera uma 
                 conexão direta entre o impacto de suas atividades e as soluções para compensá-las. Com essas ações, empresas e cidadãos podem contribuir de forma significativa para 
-                a mitigação das mudanças climáticas, promovendo um futuro mais sustentável e ajudando a proteger o meio ambiente para as próximas gerações. Essas são algumas vantagens:</h2></center>
+                a mitigação das mudanças climáticas, promovendo um futuro mais sustentável e ajudando a proteger o meio ambiente para as próximas gerações. Frente a isso, essas são algumas vantagens:</h2></center>
 
                 <div class="flex">
                     <div class="especialidades-box">
@@ -283,8 +283,8 @@
                     </table>
                 </div>
                 <div class="container">
-                    <h2 class="subtitulo2">* para compensar suas emissões totais de {{ total_pegada_carbono }} tCO2e é necessário plantar N/A {{ total_arvores }} árvores</h2>
-                    <button type="button" class="btn compensar-btn" >Compensar R${{ total_valor_arvores }}</button>
+                    <h2 class="subtitulo2">* Para compensar suas emissões totais de {{ total_emissoes_media }} tCO2e, é necessário adquirir {{ credito_carbono }} créditos de carbono e plantar N/A {{ arvore_plantadas }} árvores.</h2>
+                    <button type="button" class="btn compensar-btn" >Compensar R${{ valor_total }}</button>
                 </div>
         </section>
         {% else %}
